@@ -18,9 +18,13 @@ let game_state = 'Start';
 img.style.display = 'none';
 message.classList.add('messageStyle');
 
-document.addEventListener('keydown', (e) => {
-    
-    if(e.key == 'Enter' && game_state != 'Play'){
+document.addEventListener('keydown', handleKeyPress);
+document.addEventListener('keyup', handleKeyUp);
+document.addEventListener('touchstart', handleTouch);
+document.addEventListener('touchend', handleTouchEnd);
+
+function handleKeyPress(e) {
+    if (e.key == 'Enter' && game_state != 'Play') {
         document.querySelectorAll('.pipe_sprite').forEach((e) => {
             e.remove();
         });
@@ -33,7 +37,26 @@ document.addEventListener('keydown', (e) => {
         message.classList.remove('messageStyle');
         play();
     }
-});
+}
+
+function handleKeyUp(e) {
+    if (e.key == 'ArrowUp' || e.key == ' ') {
+        img.src = 'images/Bird.png';
+    }
+}
+
+function handleTouch(e) {
+    if (game_state === 'Play') {
+        img.src = 'images/Bird-2.png';
+        bird_dy = -7.6;
+    }
+}
+
+function handleTouchEnd(e) {
+    if (game_state === 'Play') {
+        img.src = 'images/Bird.png';
+    }
+}
 
 function play(){
     function move(){
