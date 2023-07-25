@@ -24,7 +24,7 @@ document.addEventListener('touchstart', handleTouch);
 document.addEventListener('touchend', handleTouchEnd);
 
 function handleKeyPress(e) {
-    if (e.key == 'Enter' && game_state != 'Play') {
+    if ((e.key === 'Enter' || e.type === 'touchstart') && game_state === 'Start') {
         document.querySelectorAll('.pipe_sprite').forEach((e) => {
             e.remove();
         });
@@ -39,6 +39,7 @@ function handleKeyPress(e) {
     }
 }
 
+
 function handleKeyUp(e) {
     if (e.key == 'ArrowUp' || e.key == ' ') {
         img.src = 'images/Bird.png';
@@ -46,17 +47,24 @@ function handleKeyUp(e) {
 }
 
 function handleTouch(e) {
-    if (game_state === 'Play') {
+    e.preventDefault(); // Prevent default touch behavior (e.g., scrolling)
+    if (game_state === 'Start') {
         img.src = 'images/Bird-2.png';
         bird_dy = -7.6;
+        game_state = 'Play'; // Start the game on touch
+        message.innerHTML = ''; // Remove the starting message
+        message.classList.remove('messageStyle');
+        play(); // Start the game loop
     }
 }
 
 function handleTouchEnd(e) {
+    e.preventDefault(); // Prevent default touch behavior (e.g., scrolling)
     if (game_state === 'Play') {
         img.src = 'images/Bird.png';
     }
 }
+
 
 function play(){
     function move(){
