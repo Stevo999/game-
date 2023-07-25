@@ -1,8 +1,8 @@
 let move_speed = 3, grativy = 0.5;
 let bird = document.querySelector('.bird');
 let img = document.getElementById('bird-1');
-let sound_point = new Audio('sounds effect/point.mp3');
-let sound_die = new Audio('sounds effect/die.mp3');
+let sound_pointsound = new Audio('sounds effect/pointsound.mp3');
+let sound_diesound = new Audio('sounds effect/diesound.mp3');
 
 // getting bird element properties
 let bird_props = bird.getBoundingClientRect();
@@ -75,12 +75,12 @@ function play(){
                     message.innerHTML = 'Game Over'.fontcolor('red') + '<br>Press Enter To Restart';
                     message.classList.add('messageStyle');
                     img.style.display = 'none';
-                    sound_die.play();
+                    sound_diesound.play();
                     return;
                 }else{
                     if(pipe_sprite_props.right < bird_props.left && pipe_sprite_props.right + move_speed >= bird_props.left && element.increase_score == '1'){
                         score_val.innerHTML =+ score_val.innerHTML + 1;
-                        sound_point.play();
+                        sound_pointsound.play();
                     }
                     element.style.left = pipe_sprite_props.left - move_speed + 'px';
                 }
