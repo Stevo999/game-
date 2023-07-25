@@ -13,55 +13,32 @@
     -o-background-size: cover;
     background-size: cover;
 }
-/* Adjust the bird size and position for mobile */
 .bird {
-	height: 60px;
-	width: 80px;
+	height: 100px;
+	width: 130px;
 	position: fixed;
-	top: 40vh; /* You can adjust this value as needed */
-	left: 30vw; /* You can adjust this value as needed */
+	top: 40vh;
+	left: 30vw;
 	z-index: 100;
-  }
-  
-  /* Adjust pipe spacing for mobile */
-  .pipe_sprite {
+}
+.pipe_sprite {
 	position: fixed;
-	top: 30vh; /* You can adjust this value as needed */
+	top: 40vh;
 	left: 100vw;
-	height: 40vh; /* You can adjust this value as needed */
-	width: 10vw; /* You can adjust this value as needed */
-	background: radial-gradient(lightgreen 50%, green);
+	height: 70vh;
+	width: 6vw;
+	background:radial-gradient(lightgreen 50%, green);
 	border: 5px solid black;
-  }
-  
-  /* Adjust the message font size for mobile */
-  .message {
+}
+.message {
 	position: absolute;
 	z-index: 10;
 	color: black;
-	top: 50%; /* You can adjust this value as needed */
+	top: 30%;
 	left: 50%;
-	font-size: 30px; /* You can adjust this value as needed */
+	font-size: 4em;
 	transform: translate(-50%, -50%);
 	text-align: center;
-  }
-  
-  /* Adjust the score font size for mobile */
-  .score {
-	position: fixed;
-	z-index: 10;
-	height: 10vh;
-	font-size: 6vh; /* You can adjust this value as needed */
-	font-weight: 100;
-	color: white;
-	-webkit-text-stroke-width: 2px;
-	-webkit-text-stroke-color: black;
-	top: 0;
-	left: 0;
-	margin: 10px;
-	font-family: Arial, Helvetica, sans-serif;
-  }
-  
 }
 .messageStyle{
 	background: white;
@@ -103,27 +80,4 @@
 	.pipe_sprite{
 		width: 14vw;
 	}
-}
-/* Mobile-specific adjustments */
-@media only screen and (max-width: 768px) {
-  .bird {
-    /* Adjust the bird size and position for smaller screens */
-    height: 50px;
-    width: 65px;
-    top: 35vh; /* You can adjust this value as needed */
-    left: 30vw; /* You can adjust this value as needed */
-  }
-  .pipe_sprite {
-    /* Adjust pipe spacing for smaller screens */
-    height: 30vh; /* You can adjust this value as needed */
-    width: 8vw; /* You can adjust this value as needed */
-  }
-  .message {
-    /* Adjust the message font size for smaller screens */
-    font-size: 20px; /* You can adjust this value as needed */
-  }
-  .score {
-    /* Adjust the score font size for smaller screens */
-    font-size: 4vh; /* You can adjust this value as needed */
-  }
 }
