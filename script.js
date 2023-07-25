@@ -1,4 +1,5 @@
 let move_speed = 3, grativy = 0.5;
+let bird_dy = 0; // Declare the bird_dy variable
 let bird = document.querySelector('.bird');
 let img = document.getElementById('bird-1');
 let sound_pointsound = new Audio('sounds effect/pointsound.mp3');
