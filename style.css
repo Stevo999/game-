@@ -81,3 +81,27 @@
 		width: 14vw;
 	}
 }
+
+/* Styles for smaller screens, such as mobile devices */
+@media only screen and (max-width: 768px) {
+	.bird {
+	  /* Adjust the bird's size and position for mobile */
+	  height: 60px;
+	  width: 80px;
+	  top: 30vh;
+	}
+	.pipe_sprite {
+	  /* Adjust pipe spacing for mobile */
+	  height: 50vh;
+	  width: 12vw;
+	}
+	.message {
+	  /* Adjust message font size for mobile */
+	  font-size: 30px;
+	}
+	.score {
+	  /* Adjust score font size for mobile */
+	  font-size: 6vh;
+	}
+  }
+  
